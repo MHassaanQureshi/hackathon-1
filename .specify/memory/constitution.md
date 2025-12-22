@@ -1,55 +1,40 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+- Version change: N/A → 1.0.0
+- Added sections: All principles and sections as specified for the AI-Native Book project
+- Templates requiring updates: N/A (new constitution)
+- Follow-up TODOs: None
+-->
+
+# AI-Native Book with Integrated RAG Chatbot Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### Spec-driven, AI-native development using Claude Code
+All development follows specification-driven methodology using Claude Code for AI-assisted development, ensuring accuracy based on official documentation and specs
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### Accuracy based on official documentation and specs
+All technical claims must be traceable to sources, with no hallucinated content or undocumented behavior allowed
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### Clarity for advanced CS / AI audiences
+All documentation and code must be clear and comprehensible for advanced computer science and artificial intelligence practitioners
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### Reproducibility of content, code, and deployment
+All processes must be fully reproducible from repository, following documentation-first workflow using Spec-Kit Plus
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### AI-generated output reviewed and corrected
+All AI-generated content must be reviewed and corrected by humans before final acceptance
 
-### [PRINCIPLE_6_NAME]
+### No hallucinated content or undocumented behavior
+All technical content must be grounded in verified sources and documented properly
 
+## Technology Stack and Infrastructure Constraints
+Authoring format: Docusaurus (MDX), Deployment: GitHub Pages, Tooling: Claude Code, Spec-Kit Plus, Backend: FastAPI, Databases: Neon Serverless Postgres, Qdrant Cloud (Free Tier), AI stack: OpenAI Agents / ChatKit SDKs
 
-[PRINCIPLE__DESCRIPTION]
-
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## RAG Chatbot Requirements and Success Criteria
+RAG chatbot requirements: Embedded within the published book, Answers grounded only in book content, Supports answering based on user-selected text, Sources always derived from retrieved context. Success criteria: Book successfully deployed on GitHub Pages, RAG chatbot answers accurately without hallucination, System fully reproducible from repository
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+Constitution supersedes all other practices; Amendments require documentation and approval; All PRs/reviews must verify compliance with AI-native development principles, accuracy requirements, and reproducibility standards
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-12-20 | **Last Amended**: 2025-12-20

@@ -1,0 +1,553 @@
+openapi: 3.0.3
+info:
+  title: AI-Native Book API
+  description: API for the AI-Native Book on Physical AI & Humanoid Robotics
+  version: 1.0.0
+servers:
+  - url: https://api.example.com
+    description: Production server
+  - url: https://staging-api.example.com
+    description: Staging server
+paths:
+  /api/content/modules:
+    get:
+      summary: Get all book modules
+      description: Retrieve a list of all book modules with basic information
+      responses:
+        '200':
+          description: List of modules
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  modules:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/BookModule'
+        '500':
+          description: Internal server error
+  /api/content/modules/{moduleId}:
+    get:
+      summary: Get specific module
+      description: Retrieve detailed information about a specific module
+      parameters:
+        - name: moduleId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Module identifier
+      responses:
+        '200':
+          description: Module details
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  module:
+                    $ref: '#/components/schemas/BookModule'
+        '404':
+          description: Module not found
+        '500':
+          description: Internal server error
+  /api/content/modules/{moduleId}/chapters:
+    get:
+      summary: Get chapters in a module
+      description: Retrieve all chapters within a specific module
+      parameters:
+        - name: moduleId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Module identifier
+      responses:
+        '200':
+          description: List of chapters in the module
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  chapters:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Chapter'
+        '404':
+          description: Module not found
+        '500':
+          description: Internal server error
+  /api/content/modules/{moduleId}/chapters/{chapterId}:
+    get:
+      summary: Get specific chapter
+      description: Retrieve detailed content of a specific chapter
+      parameters:
+        - name: moduleId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Module identifier
+        - name: chapterId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Chapter identifier
+      responses:
+        '200':
+          description: Chapter content
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  chapter:
+                    $ref: '#/components/schemas/Chapter'
+        '404':
+          description: Chapter not found
+        '500':
+          description: Internal server error
+  /api/search:
+    post:
+      summary: Search book content
+      description: Search across all book content using the query
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchRequest'
+      responses:
+        '200':
+          description: Search results
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResponse'
+        '500':
+          description: Internal server error
+  /api/chat:
+    post:
+      summary: Chat with the RAG system
+      description: Process user queries against book content using RAG
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChatRequest'
+      responses:
+        '200':
+          description: Chat response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ChatResponse'
+        '500':
+          description: Internal server error
+  /api/progress:
+    get:
+      summary: Get user progress
+      description: Retrieve the user's progress through the book
+      responses:
+        '200':
+          description: User progress data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProgressResponse'
+        '500':
+          description: Internal server error
+    post:
+      summary: Update user progress
+      description: Update the user's progress for a specific module/chapter
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProgressUpdateRequest'
+      responses:
+        '200':
+          description: Progress updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+        '500':
+          description: Internal server error
+components:
+  schemas:
+    BookModule:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the module
+        title:
+          type: string
+          description: Display title of the module
+        description:
+          type: string
+          description: Brief description of the module content
+        order:
+          type: integer
+          description: Sequential order of the module in the curriculum
+        slug:
+          type: string
+          description: URL-friendly identifier for the module
+        learningObjectives:
+          type: array
+          items:
+            type: string
+          description: List of learning objectives for the module
+        chapterCount:
+          type: integer
+          description: Number of chapters in this module
+        createdAt:
+          type: string
+          format: date-time
+          description: Timestamp of module creation
+        updatedAt:
+          type: string
+          format: date-time
+          description: Timestamp of last module update
+      required:
+        - id
+        - title
+        - description
+        - order
+        - slug
+        - learningObjectives
+        - createdAt
+        - updatedAt
+
+    Chapter:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the chapter
+        title:
+          type: string
+          description: Display title of the chapter
+        moduleId:
+          type: string
+          description: Reference to the parent module
+        order:
+          type: integer
+          description: Sequential order of the chapter within the module
+        slug:
+          type: string
+          description: URL-friendly identifier for the chapter
+        content:
+          type: string
+          description: MDX content of the chapter
+        learningObjectives:
+          type: array
+          items:
+            type: string
+          description: List of learning objectives for the chapter
+        estimatedReadingTime:
+          type: integer
+          description: Estimated reading time in minutes
+        exercises:
+          type: array
+          items:
+            $ref: '#/components/schemas/Exercise'
+        resources:
+          type: array
+          items:
+            $ref: '#/components/schemas/Resource'
+        createdAt:
+          type: string
+          format: date-time
+          description: Timestamp of chapter creation
+        updatedAt:
+          type: string
+          format: date-time
+          description: Timestamp of last chapter update
+      required:
+        - id
+        - title
+        - moduleId
+        - order
+        - slug
+        - content
+        - learningObjectives
+        - estimatedReadingTime
+        - createdAt
+        - updatedAt
+
+    Exercise:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the exercise
+        title:
+          type: string
+          description: Display title of the exercise
+        type:
+          type: string
+          description: Type of exercise
+          enum: [code, theory, simulation, quiz]
+        difficulty:
+          type: string
+          description: Difficulty level
+          enum: [beginner, intermediate, advanced]
+        description:
+          type: string
+          description: Detailed description of the exercise
+        instructions:
+          type: string
+          description: Step-by-step instructions for the exercise
+        solution:
+          type: string
+          description: Solution or expected outcome for the exercise
+        validationCriteria:
+          type: array
+          items:
+            type: string
+          description: Criteria for validating exercise completion
+      required:
+        - id
+        - title
+        - type
+        - difficulty
+        - description
+        - instructions
+
+    Resource:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the resource
+        title:
+          type: string
+          description: Display title of the resource
+        url:
+          type: string
+          description: URL or path to the resource
+        type:
+          type: string
+          description: Type of resource
+          enum: [video, code, paper, tool, documentation]
+        description:
+          type: string
+          description: Brief description of the resource
+        tags:
+          type: array
+          items:
+            type: string
+          description: Topic tags for the resource
+      required:
+        - id
+        - title
+        - url
+        - type
+
+    SearchRequest:
+      type: object
+      properties:
+        query:
+          type: string
+          description: Search query string
+        filters:
+          type: object
+          properties:
+            module:
+              type: string
+              description: Filter by specific module
+            chapter:
+              type: string
+              description: Filter by specific chapter
+            tags:
+              type: array
+              items:
+                type: string
+              description: Filter by tags
+          description: Optional filters for the search
+      required:
+        - query
+
+    SearchResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: Identifier of the result
+              title:
+                type: string
+                description: Title of the result
+              contentPreview:
+                type: string
+                description: Preview of the content
+              module:
+                type: string
+                description: Module containing the result
+              chapter:
+                type: string
+                description: Chapter containing the result
+              relevanceScore:
+                type: number
+                description: Relevance score of the result
+        totalCount:
+          type: integer
+          description: Total number of results
+      required:
+        - results
+        - totalCount
+
+    ChatRequest:
+      type: object
+      properties:
+        message:
+          type: string
+          description: User's message/query
+        context:
+          type: object
+          properties:
+            moduleId:
+              type: string
+              description: Module context for the query
+            chapterId:
+              type: string
+              description: Chapter context for the query
+          description: Context information for the query
+        sessionId:
+          type: string
+          description: Chat session identifier
+      required:
+        - message
+
+    ChatResponse:
+      type: object
+      properties:
+        response:
+          type: string
+          description: AI-generated response
+        sources:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                description: Source identifier
+              title:
+                type: string
+                description: Source title
+              module:
+                type: string
+                description: Module containing the source
+              chapter:
+                type: string
+                description: Chapter containing the source
+              relevance:
+                type: number
+                description: Relevance score of the source
+          description: Sources used in the response
+        sessionId:
+          type: string
+          description: Chat session identifier
+      required:
+        - response
+        - sources
+        - sessionId
+
+    UserProgressResponse:
+      type: object
+      properties:
+        progress:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserProgress'
+      required:
+        - progress
+
+    UserProgress:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the progress record
+        moduleId:
+          type: string
+          description: Reference to the module
+        chapterId:
+          type: string
+          description: Reference to the specific chapter
+        status:
+          type: string
+          description: Progress status
+          enum: [not-started, in-progress, completed]
+        completionPercentage:
+          type: number
+          description: Percentage of content completed
+        timeSpent:
+          type: integer
+          description: Time spent on the content in seconds
+        lastAccessedAt:
+          type: string
+          format: date-time
+          description: When the content was last accessed
+        exercisesCompleted:
+          type: array
+          items:
+            type: string
+          description: IDs of completed exercises
+        createdAt:
+          type: string
+          format: date-time
+          description: Timestamp of progress record creation
+        updatedAt:
+          type: string
+          format: date-time
+          description: Timestamp of last progress update
+      required:
+        - id
+        - moduleId
+        - status
+        - completionPercentage
+        - lastAccessedAt
+        - createdAt
+        - updatedAt
+
+    ProgressUpdateRequest:
+      type: object
+      properties:
+        moduleId:
+          type: string
+          description: Reference to the module
+        chapterId:
+          type: string
+          description: Reference to the specific chapter
+        status:
+          type: string
+          description: New progress status
+          enum: [not-started, in-progress, completed]
+        completionPercentage:
+          type: number
+          description: Updated completion percentage
+        exercisesCompleted:
+          type: array
+          items:
+            type: string
+          description: IDs of newly completed exercises
+      required:
+        - moduleId
+        - status
+        - completionPercentage
