@@ -18,7 +18,7 @@ const config: Config = {
   url: 'https://mhassaanqureshi.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/hackathon-1-Q4/',
+  baseUrl: '/hackathon-1/',
 
   // GitHub Pages adds trailing slashes by default
   trailingSlash: true,
@@ -26,7 +26,7 @@ const config: Config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'MHassaanQureshi', // Usually your GitHub org/user name.
-  projectName: 'hackathon-1-Q4', // Usually your repo name.
+  projectName: 'hackathon-1', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
@@ -47,7 +47,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/GIAIC/hackathon-1/edit/master/website/',
+            'https://github.com/MHassaanQureshi/hackathon-1/edit/main/website/',
         },
         blog: {
           showReadingTime: true,
@@ -58,7 +58,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/GIAIC/hackathon-1/edit/master/website/',
+            'https://github.com/MHassaanQureshi/hackathon-1/edit/main/website/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -92,7 +92,7 @@ const config: Config = {
         },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/GIAIC/hackathon-1',
+          href: 'https://github.com/MHassaanQureshi/hackathon-1',
           label: 'GitHub',
           position: 'right',
         },
@@ -148,7 +148,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/GIAIC/hackathon-1',
+              href: 'https://github.com/MHassaanQureshi/hackathon-1',
             },
           ],
         },
