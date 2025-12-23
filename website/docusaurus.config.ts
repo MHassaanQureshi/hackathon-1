@@ -18,7 +18,7 @@ const config: Config = {
   url: 'https://mhassaanqureshi.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/hackathon-1/',
+  baseUrl: '/',
 
   // GitHub Pages adds trailing slashes by default
   trailingSlash: true,
