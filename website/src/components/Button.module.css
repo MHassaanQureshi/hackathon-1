@@ -1,0 +1,108 @@
+.button {
+  display: inline-block;
+  text-align: center;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+  user-select: none;
+  outline: 0;
+  position: relative;
+}
+
+.button:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.button--disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.button--disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Button sizes */
+.button--small {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.button--medium {
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+}
+
+.button--large {
+  padding: 1rem 1.5rem;
+  font-size: 1.125rem;
+}
+
+/* Button types */
+.button--primary {
+  background-color: var(--ifm-color-primary);
+  color: white;
+}
+
+.button--primary:hover {
+  background-color: var(--ifm-color-primary-dark);
+}
+
+.button--secondary {
+  background-color: var(--ifm-color-secondary);
+  color: white;
+}
+
+.button--secondary:hover {
+  background-color: #546e7a;
+}
+
+.button--success {
+  background-color: var(--ifm-color-success);
+  color: white;
+}
+
+.button--success:hover {
+  background-color: #2e7d32;
+}
+
+.button--danger {
+  background-color: var(--ifm-color-danger);
+  color: white;
+}
+
+.button--danger:hover {
+  background-color: #c62828;
+}
+
+.button--outline {
+  background-color: transparent;
+  color: var(--ifm-color-primary);
+  border: 2px solid var(--ifm-color-primary);
+}
+
+.button--outline:hover {
+  background-color: var(--ifm-color-primary);
+  color: white;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .button--outline {
+  border-color: var(--ifm-color-primary-light);
+  color: var(--ifm-color-primary-light);
+}
+
+[data-theme='dark'] .button--outline:hover {
+  background-color: var(--ifm-color-primary-light);
+  color: var(--ifm-color-gray-900);
+}

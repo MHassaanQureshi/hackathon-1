@@ -1,0 +1,59 @@
+.callout {
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  border-radius: 6px;
+  background-color: var(--ifm-color-emphasis-100);
+  border-left: 4px solid var(--ifm-color-primary);
+  display: flex;
+  flex-direction: column;
+}
+
+.calloutTitle {
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: var(--ifm-heading-color);
+}
+
+.calloutContent {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.calloutContent > *:first-child {
+  margin-top: 0;
+}
+
+.calloutContent > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Callout type variations */
+.callout--default {
+  border-left-color: var(--ifm-color-primary);
+}
+
+.callout--info {
+  border-left-color: var(--ifm-color-info);
+}
+
+.callout--success {
+  border-left-color: var(--ifm-color-success);
+}
+
+.callout--warning {
+  border-left-color: var(--ifm-color-warning);
+}
+
+.callout--danger {
+  border-left-color: var(--ifm-color-danger);
+}
+
+.callout--note {
+  border-left-color: var(--ifm-color-secondary);
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .callout {
+  background-color: var(--ifm-color-emphasis-200);
+}

@@ -6,27 +6,44 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e7d32; /* Darker green for primary educational color */
-  --ifm-color-primary-dark: #276d2a;
-  --ifm-color-primary-darker: #256427;
-  --ifm-color-primary-darkest: #1e511f;
-  --ifm-color-primary-light: #388e3c;
-  --ifm-color-primary-lighter: #4caf50;
-  --ifm-color-primary-lightest: #66bb6a;
-  --ifm-code-font-size: 90%;
+  --ifm-color-primary: #66bb6a; /* Lighter green for galaxy theme */
+  --ifm-color-primary-dark: #4caf50;
+  --ifm-color-primary-darker: #43a047;
+  --ifm-color-primary-darkest: #388e3c;
+  --ifm-color-primary-light: #81c784;
+  --ifm-color-primary-lighter: #a5d6a7;
+  --ifm-color-primary-lightest: #c8e6c9;
+  --ifm-code-font-size: 95%; /* Increased for better readability */
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
-  /* Educational theme additions */
-  --ifm-color-secondary: #607d8b; /* Blue-gray for secondary elements */
-  --ifm-color-info: #0277bd; /* Blue for info boxes */
-  --ifm-color-warning: #f57c00; /* Orange for warnings */
-  --ifm-color-success: #388e3c; /* Green for success */
-  --ifm-color-danger: #d32f2f; /* Red for errors */
+  /* Galaxy theme additions */
+  --ifm-color-secondary: #78909c; /* Lighter blue-gray for secondary elements */
+  --ifm-color-info: #42a5f5; /* Lighter blue for info boxes */
+  --ifm-color-warning: #ffb74d; /* Lighter orange for warnings */
+  --ifm-color-success: #81c784; /* Lighter green for success */
+  --ifm-color-danger: #ef5350; /* Lighter red for errors */
 
-  /* Typography improvements for educational content */
-  --ifm-font-size-base: 16px;
-  --ifm-line-height-base: 1.7;
-  --ifm-paragraph-margin-bottom: 1rem;
+  /* Enhanced Typography System */
+  --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --ifm-font-size-base: 17px; /* Slightly larger for better readability */
+  --ifm-line-height-base: 1.8; /* Increased for better readability */
+  --ifm-paragraph-margin-bottom: 1.25rem; /* More space between paragraphs */
+
+  /* Heading sizes for improved visual hierarchy */
+  --ifm-h1-font-size: 2.5rem;
+  --ifm-h2-font-size: 2rem;
+  --ifm-h3-font-size: 1.75rem;
+  --ifm-h4-font-size: 1.5rem;
+  --ifm-h5-font-size: 1.25rem;
+  --ifm-h6-font-size: 1.1rem;
+
+  /* Spacing improvements */
+  --ifm-spacing-horizontal: 1.5rem;
+  --ifm-spacing-vertical: 1.5rem;
+
+  /* Content width for better readability */
+  --ifm-container-width: 800px;
+  --ifm-container-width-xl: 900px;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -40,12 +57,29 @@
   --ifm-color-primary-lightest: #c8e6c9;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 
-  /* Dark mode adjustments for educational content */
+  /* Galaxy theme adjustments for dark mode */
   --ifm-color-secondary: #78909c;
   --ifm-color-info: #42a5f5;
   --ifm-color-warning: #ffb74d;
   --ifm-color-success: #81c784;
   --ifm-color-danger: #ef5350;
+
+  /* Galaxy-themed background colors for dark mode */
+  --ifm-background-color: #0c0c24;
+  --ifm-background-surface-color: #1a1a2e;
+  --ifm-color-emphasis-100: rgba(255, 255, 255, 0.05);
+  --ifm-color-emphasis-200: rgba(255, 255, 255, 0.1);
+  --ifm-color-emphasis-300: rgba(255, 255, 255, 0.2);
+  --ifm-color-emphasis-400: rgba(255, 255, 255, 0.3);
+  --ifm-color-emphasis-500: rgba(255, 255, 255, 0.4);
+  --ifm-color-emphasis-600: rgba(255, 255, 255, 0.6);
+  --ifm-color-emphasis-700: rgba(255, 255, 255, 0.7);
+  --ifm-color-emphasis-800: rgba(255, 255, 255, 0.8);
+  --ifm-color-emphasis-900: rgba(255, 255, 255, 0.9);
+  --ifm-color-emphasis-1000: rgba(255, 255, 255, 1);
+
+  /* Dark mode typography enhancements */
+  --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 /* Custom styles for educational content */
@@ -53,73 +87,522 @@
   background-color: #e3f2fd;
   border-color: #2196f3;
   color: #1565c0;
+  border-left-width: 4px;
+  border-radius: 0 4px 4px 0;
 }
 
 .alert--success {
   background-color: #e8f5e8;
   border-color: #4caf50;
   color: #2e7d32;
+  border-left-width: 4px;
+  border-radius: 0 4px 4px 0;
 }
 
 .alert--warning {
   background-color: #fff3e0;
   border-color: #ff9800;
   color: #ef6c00;
+  border-left-width: 4px;
+  border-radius: 0 4px 4px 0;
 }
 
 .alert--danger {
   background-color: #ffebee;
   border-color: #f44336;
   color: #c62828;
+  border-left-width: 4px;
+  border-radius: 0 4px 4px 0;
 }
 
 /* Enhanced code block styling */
 .prism-code {
-  border-radius: 6px;
-  padding: 1rem !important;
-  font-size: 0.85rem;
+  border-radius: 8px; /* More rounded corners */
+  padding: 1.25rem !important; /* More padding */
+  font-size: 0.9rem; /* Slightly larger */
+  line-height: 1.5; /* Better line height for code */
+  margin: 1.25rem 0; /* Consistent spacing */
+  background-color: var(--ifm-color-emphasis-100);
+  overflow-x: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
-/* Improved heading styling */
+/* Improved heading styling with better visual hierarchy */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
-/* Better spacing for educational content */
-.markdown h2 {
-  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+h1 {
+  font-size: var(--ifm-h1-font-size);
+  margin-top: 0;
+  color: var(--ifm-heading-color);
+}
+
+h2 {
+  font-size: var(--ifm-h2-font-size);
   padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--ifm-color-emphasis-300);
+  margin-top: 2.5rem;
+}
+
+h3 {
+  font-size: var(--ifm-h3-font-size);
   margin-top: 2rem;
 }
 
-.markdown h3 {
+h4 {
+  font-size: var(--ifm-h4-font-size);
+  margin-top: 1.75rem;
+}
+
+h5 {
+  font-size: var(--ifm-h5-font-size);
   margin-top: 1.5rem;
+}
+
+h6 {
+  font-size: var(--ifm-h6-font-size);
+  margin-top: 1.25rem;
+}
+
+/* Better spacing for educational content */
+.markdown {
+  font-size: var(--ifm-font-size-base);
+  line-height: var(--ifm-line-height-base);
+}
+
+.markdown > p {
+  margin-bottom: var(--ifm-paragraph-margin-bottom);
 }
 
 /* Enhanced blockquote styling for tips and notes */
 blockquote {
   border-left: 4px solid var(--ifm-color-primary);
   background-color: var(--ifm-color-emphasis-100);
-  padding: 1rem 1.5rem;
+  padding: 1.25rem 1.75rem;
   margin: 1.5rem 0;
   border-radius: 0 4px 4px 0;
+  font-style: italic;
+  color: var(--ifm-color-emphasis-800);
 }
 
 /* Better table styling for educational content */
 .markdown table {
   display: table;
   width: 100%;
+  margin: 1.5rem 0;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
 .markdown table th,
 .markdown table td {
-  padding: 0.75rem;
+  padding: 0.85rem 1rem;
   vertical-align: top;
-  border-top: 1px solid var(--ifm-color-emphasis-300);
+  border: 1px solid var(--ifm-color-emphasis-300);
 }
 
 .markdown table thead th {
   vertical-align: bottom;
-  border-bottom: 2px solid var(--ifm-color-emphasis-300);
   background-color: var(--ifm-color-emphasis-100);
+  font-weight: 600;
+  border-bottom-width: 2px;
+}
+
+/* Enhanced list styling */
+.markdown ul,
+.markdown ol {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.markdown li {
+  margin-bottom: 0.5rem;
+}
+
+/* Better link styling */
+.markdown a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.markdown a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Improved container for better content width */
+.container {
+  max-width: var(--ifm-container-width-xl) !important;
+  padding: 0 var(--ifm-spacing-horizontal);
+}
+
+/* Enhanced sidebar styling */
+.menu {
+  font-size: 0.9rem;
+}
+
+.menu__list-item {
+  margin-bottom: 0.25rem;
+}
+
+.menu__link {
+  border-radius: 6px;
+  margin: 0.125rem 0;
+}
+
+.menu__link--active {
+  font-weight: 600;
+}
+
+/* Improved navbar styling */
+.navbar {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  padding: 0.75rem 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+}
+
+.navbar__inner {
+  max-width: var(--ifm-container-width-xl);
+  margin: 0 auto;
+  padding: 0 var(--ifm-spacing-horizontal);
+}
+
+.navbar__brand {
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+}
+
+.navbar__items {
+  font-size: 0.95rem;
+}
+
+.navbar__item,
+.navbar__link {
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  margin: 0 0.125rem;
+}
+
+.navbar__link:hover {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.navbar__link--active {
+  background-color: var(--ifm-color-primary);
+  color: white;
+}
+
+/* Simplified mobile navbar */
+.navbar-sidebar__brand {
+  padding: 1rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.navbar-sidebar__items {
+  padding: 1rem;
+}
+
+/* Better button styling */
+.button {
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced code inline styling */
+.codeInline {
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: 4px;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.85rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  font-family: var(--ifm-font-family-monospace);
+}
+
+/* Enhanced sidebar styling for better organization */
+.menu {
+  font-size: 0.9rem;
+  padding: 0.5rem;
+}
+
+.menu__list {
+  margin-top: 0.5rem;
+}
+
+.menu__list-item {
+  margin-bottom: 0.25rem;
+  border-radius: 6px;
+}
+
+.menu__list-item:not(:first-child) {
+  margin-top: 0;
+}
+
+.menu__link {
+  border-radius: 6px;
+  margin: 0.125rem 0;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  transition: all var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+}
+
+.menu__link:hover {
+  background-color: var(--ifm-color-emphasis-100);
+  text-decoration: none;
+}
+
+.menu__link--active {
+  background-color: var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+  border-left: 3px solid var(--ifm-color-primary);
+  padding-left: calc(0.75rem - 3px);
+}
+
+.menu__category {
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-900);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Collapsible menu improvements */
+.menu__caret {
+  border-radius: 4px;
+}
+
+.menu__list-item-collapsible {
+  border-radius: 6px;
+}
+
+.menu__list-item-collapsible:hover {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+/* Responsive design improvements */
+@media (max-width: 996px) {
+  .navbar {
+    padding: 0.5rem 0;
+  }
+
+  .navbar__inner {
+    padding: 0 1rem;
+  }
+
+  .navbar__items {
+    font-size: 0.9rem;
+  }
+
+  .navbar__item,
+  .navbar__link {
+    padding: 0.5rem 0.5rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .menu {
+    padding: 0.25rem;
+  }
+
+  .menu__link {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .prism-code {
+    padding: 0.75rem !important;
+    font-size: 0.8rem;
+  }
+
+  .codeInline {
+    font-size: 0.8rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-sidebar__items {
+    padding: 0.5rem;
+  }
+
+  .menu__list-item {
+    margin-bottom: 0.125rem;
+  }
+
+  .menu__link {
+    padding: 0.5rem;
+  }
+
+  .tipHeading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tipIcon {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .callout {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar__items {
+    font-size: 0.85rem;
+  }
+
+  .navbar__item,
+  .navbar__link {
+    padding: 0.4rem 0.3rem;
+    margin: 0 0.0625rem;
+  }
+
+  .menu__link {
+    font-size: 0.8rem;
+  }
+
+  .markdown table {
+    font-size: 0.85rem;
+    display: block;
+    overflow-x: auto;
+  }
+
+  .tip,
+  .callout,
+  .card {
+    padding: 0.85rem;
+  }
+
+  .button--small {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+  }
+
+  .button--medium {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .button--large {
+    padding: 0.8rem 1.25rem;
+    font-size: 1rem;
+  }
+}
+
+/* Improved focus styles for accessibility */
+.navbar__link:focus,
+.menu__link:focus,
+.button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Galaxy theme enhancements */
+body {
+  background: linear-gradient(135deg, #0c0c24, #1a1a2e, #0c0c24);
+  background-attachment: fixed;
+}
+
+/* Dark mode navigation enhancements */
+[data-theme='dark'] .navbar {
+  background-color: rgba(12, 12, 36, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .navbar__link:hover {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .navbar__link--active {
+  background-color: var(--ifm-color-primary);
+  color: white;
+}
+
+[data-theme='dark'] .menu {
+  background-color: rgba(26, 26, 46, 0.8);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .menu__link:hover {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .menu__link--active {
+  background-color: rgba(102, 187, 106, 0.15);
+  color: var(--ifm-color-primary);
+  border-left-color: var(--ifm-color-primary);
+}
+
+/* Galaxy theme for main content */
+[data-theme='dark'] main {
+  background: linear-gradient(135deg, #0c0c24, #1a1a2e, #0c0c24);
+}
+
+[data-theme='dark'] .container {
+  background-color: rgba(26, 26, 46, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Galaxy theme responsive improvements */
+@media (max-width: 996px) {
+  [data-theme='dark'] .navbar__link:hover {
+    background-color: var(--ifm-color-emphasis-200);
+  }
+
+  [data-theme='dark'] .menu__link:hover {
+    background-color: var(--ifm-color-emphasis-200);
+  }
+
+  [data-theme='dark'] .container {
+    padding: 1rem;
+    border-radius: 8px;
+  }
 }

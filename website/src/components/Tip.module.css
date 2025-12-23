@@ -1,0 +1,58 @@
+.tip {
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  border-left: 4px solid;
+  border-radius: 0 4px 4px 0;
+  background-color: var(--ifm-color-emphasis-100);
+  display: flex;
+  flex-direction: column;
+}
+
+.tipHeading {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.tipIcon {
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-top: 2px;
+}
+
+.tipTitle {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: var(--ifm-heading-color);
+}
+
+.tipContent {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Tip type variations */
+.tip--tip {
+  border-left-color: var(--ifm-color-success);
+}
+
+.tip--note {
+  border-left-color: var(--ifm-color-info);
+}
+
+.tip--caution {
+  border-left-color: var(--ifm-color-warning);
+}
+
+.tip--danger {
+  border-left-color: var(--ifm-color-danger);
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .tip {
+  background-color: var(--ifm-color-emphasis-200);
+}

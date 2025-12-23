@@ -49,21 +49,6 @@ const config: Config = {
           editUrl:
             'https://github.com/MHassaanQureshi/hackathon-1/edit/main/website/',
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/MHassaanQureshi/hackathon-1/edit/main/website/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -90,10 +75,14 @@ const config: Config = {
           position: 'left',
           label: 'Modules',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/MHassaanQureshi/hackathon-1',
+          href: 'https://github.com/MHassaanQureshi',
           label: 'GitHub',
+          position: 'right',
+        },
+        {
+          href: 'https://linkedin.com/in/mhassaanqureshi', // Replace with your LinkedIn URL
+          label: 'LinkedIn',
           position: 'right',
         },
       ],
@@ -123,6 +112,23 @@ const config: Config = {
           ],
         },
         {
+          title: 'Connect',
+          items: [
+            {
+              label: 'GitHub',
+              href: 'https://github.com/MHassaanQureshi',
+            },
+            {
+              label: 'LinkedIn',
+              href: 'https://linkedin.com/in/mhassaanqureshi', // Replace with your LinkedIn URL
+            },
+            {
+              label: 'Twitter',
+              href: 'https://twitter.com/mhassaanqureshi', // Replace with your Twitter URL
+            },
+          ],
+        },
+        {
           title: 'Resources',
           items: [
             {
@@ -139,21 +145,8 @@ const config: Config = {
             },
           ],
         },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/MHassaanQureshi/hackathon-1',
-            },
-          ],
-        },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} AI-Native Book on Physical AI & Humanoid Robotics. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} AI-Native Book on Physical AI & Humanoid Robotics.`,
     },
     prism: {
       theme: prismThemes.github,

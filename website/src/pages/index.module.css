@@ -8,6 +8,24 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroBanner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 20%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 30%);
+  pointer-events: none;
 }
 
 @media screen and (max-width: 996px) {
@@ -20,4 +38,55 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.modulesSection {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #0c0c24, #1a1a2e, #0c0c24);
+  color: white;
+}
+
+.moduleCard {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.moduleCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.moduleCard .card__header h3 {
+  color: #66bb6a;
+  margin-bottom: 0.5rem;
+}
+
+.moduleCard .card__body p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1rem;
+}
+
+.moduleCard .card__footer {
+  display: flex;
+  justify-content: center;
+}
+
+/* Galaxy theme for dark mode */
+[data-theme='dark'] .heroBanner {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+}
+
+[data-theme='dark'] .modulesSection {
+  background: linear-gradient(135deg, #0c0c24, #1a1a2e, #0c0c24);
+}
+
+[data-theme='dark'] .moduleCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }

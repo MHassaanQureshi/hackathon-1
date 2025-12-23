@@ -1,0 +1,44 @@
+.codeBlockWrapper {
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.codeBlockHeader {
+  padding: 0.75rem 1rem;
+  background-color: var(--ifm-color-emphasis-200);
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.codeBlockTitle {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-800);
+  margin: 0;
+}
+
+.codeBlockContent {
+  overflow-x: auto;
+}
+
+.codeBlockContent pre {
+  margin: 0;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .codeBlockWrapper {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .codeBlockHeader {
+  background-color: var(--ifm-color-emphasis-300);
+}

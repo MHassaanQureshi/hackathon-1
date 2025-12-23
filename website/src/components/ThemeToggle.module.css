@@ -1,0 +1,71 @@
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.themeToggleButtons {
+  display: flex;
+  gap: 0.25rem;
+  background-color: var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  padding: 0.25rem;
+}
+
+.themeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--ifm-transition-fast) var(--ifm-transition-timing-default);
+  color: var(--ifm-color-emphasis-700);
+}
+
+.themeButton:hover {
+  background-color: var(--ifm-color-emphasis-300);
+  color: var(--ifm-color-emphasis-900);
+}
+
+.themeButtonActive {
+  background-color: var(--ifm-color-primary);
+  color: white;
+}
+
+.themeButtonActive:hover {
+  background-color: var(--ifm-color-primary-dark);
+  color: white;
+}
+
+.themeIcon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .themeToggleButtons {
+  background-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .themeButton {
+  color: var(--ifm-color-emphasis-600);
+}
+
+[data-theme='dark'] .themeButton:hover {
+  background-color: var(--ifm-color-emphasis-400);
+  color: var(--ifm-color-emphasis-900);
+}
+
+[data-theme='dark'] .themeButtonActive {
+  background-color: var(--ifm-color-primary-light);
+  color: var(--ifm-color-gray-900);
+}
+
+[data-theme='dark'] .themeButtonActive:hover {
+  background-color: var(--ifm-color-primary);
+  color: white;
+}

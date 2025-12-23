@@ -1,0 +1,68 @@
+.card {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: var(--ifm-color-emphasis-100);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.cardTitle {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--ifm-heading-color);
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  padding-bottom: 0.5rem;
+}
+
+.cardContent {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.cardContent > *:first-child {
+  margin-top: 0;
+}
+
+.cardContent > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Card type variations */
+.card--primary {
+  border-left: 4px solid var(--ifm-color-primary);
+  border-radius: 0 4px 4px 0;
+}
+
+.card--secondary {
+  border-left: 4px solid var(--ifm-color-secondary);
+  border-radius: 0 4px 4px 0;
+}
+
+.card--info {
+  border-left: 4px solid var(--ifm-color-info);
+  border-radius: 0 4px 4px 0;
+}
+
+.card--success {
+  border-left: 4px solid var(--ifm-color-success);
+  border-radius: 0 4px 4px 0;
+}
+
+.card--warning {
+  border-left: 4px solid var(--ifm-color-warning);
+  border-radius: 0 4px 4px 0;
+}
+
+.card--danger {
+  border-left: 4px solid var(--ifm-color-danger);
+  border-radius: 0 4px 4px 0;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .card {
+  background-color: var(--ifm-color-emphasis-200);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
