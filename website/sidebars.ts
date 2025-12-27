@@ -18,7 +18,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Introduction',
-      items: ['intro'],
+      items: ['intro', 'ai-assistant-integration'],
     },
     {
       type: 'category',

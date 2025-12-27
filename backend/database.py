@@ -8,6 +8,8 @@ class Settings(BaseSettings):
 
     class Config:
         env_file = ".env"
+        # Allow extra environment variables that aren't defined in the model
+        extra = "ignore"
 
 settings = Settings()
 

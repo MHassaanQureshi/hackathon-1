@@ -76,6 +76,11 @@ const config: Config = {
           label: 'Modules',
         },
         {
+          to: '/ai-assistant',
+          label: 'AI Assistant',
+          position: 'left',
+        },
+        {
           href: 'https://github.com/MHassaanQureshi',
           label: 'GitHub',
           position: 'right',

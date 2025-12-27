@@ -1,0 +1,48 @@
+---
+sidebar_position: 1
+title: "AI Assistant Integration"
+---
+
+# AI Assistant Integration
+
+This page demonstrates how to integrate the AI assistant into your documentation pages.
+
+## Using the Chat Interface
+
+You can embed the AI assistant directly in your pages to provide interactive help related to the content:
+
+import ChatInterface from '@site/src/components/ChatInterface';
+
+<div className="row">
+  <div className="col col--12">
+    <ChatInterface />
+  </div>
+</div>
+
+## How It Works
+
+The AI assistant is powered by a Retrieval-Augmented Generation (RAG) system that:
+
+- Understands the content of the entire book
+- Provides accurate answers based on the book's content
+- References specific modules and chapters in its responses
+- Maintains conversation context for follow-up questions
+
+## Best Practices
+
+1. **Be Specific**: Ask specific questions to get more targeted answers
+2. **Follow Up**: Use follow-up questions to dive deeper into topics
+3. **Check Sources**: Review the sources provided in the responses to find related content
+4. **Explore**: Use the assistant to discover related concepts in the book
+
+## Example Questions
+
+Try asking the assistant questions like:
+
+- "Explain the difference between ROS 1 and ROS 2"
+- "How do I create a publisher node in rclpy?"
+- "What are the key components of URDF?"
+- "Explain how Gazebo simulates physics"
+- "What is VSLAM and how is it used in robotics?"
+
+The AI assistant will provide answers based on the book content and reference the specific chapters where you can find more information.
